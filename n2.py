@@ -1,23 +1,10 @@
 import requests
-import image
 
-url = 'https://app.nanonets.com/api/v2/ObjectDetection/Model/9b629fa2-43e4-4d94-823d-be32fe92e068/LabelUrls/'
+url = 'https://app.nanonets.com/api/v2/OCR/Model/4323c454-958f-4b55-8b06-558dbbb2dfdc/LabelFile/'
 
-headers = {
-    'accept': 'application/x-www-form-urlencoded'
-}
+data = {'file': open('D:\\Downloads\\131882.jpeg', 'rb')}
 
-data = {'urls' : ['https://goo.gl/ICoiHc']}
-
-response = requests.request('POST', url, headers=headers, auth=requests.auth.HTTPBasicAuth('Gfc5-Eh7M9XlJNyBDaSygH0jLx5L2038', ''), data=data)
-
-print(response.text)
-
-url = 'https://app.nanonets.com/api/v2/ObjectDetection/Model/9b629fa2-43e4-4d94-823d-be32fe92e068/LabelFile/'
-
-data = {'file': image.open('C:\Users\SNEHIL VERMA\Desktop\100775.jpg', 'rb')}
-
-response = requests.post(url, auth=requests.auth.HTTPBasicAuth('Gfc5-Eh7M9XlJNyBDaSygH0jLx5L2038', ''), files=data)
+response = requests.post(url, auth=requests.auth.HTTPBasicAuth('mYyXQ5AFq8zGKNrDWVl-f4vmrkcl7d6_', ''), files=data)
 
 print(response.text)
 
